@@ -4,7 +4,7 @@
 
 参考 [作品](https://openprocessing.org/sketch/1727271)
 
-样品地址: [一只皮蛋的杂货铺](https://mrsao.com.cn/Serendipity/Firework/])
+样品地址: [一只皮蛋的杂货铺](https://mrsao.com.cn/Serendipity/Firework/)
 
 背景音乐：风居住的街道（Piano ver） (翻自 磯村由紀子）
 
