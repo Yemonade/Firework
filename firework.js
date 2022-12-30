@@ -1,13 +1,20 @@
 let img;
 let song;
+let mobile_flag;
 
 function preload() {
-    img = loadImage("static/backgound.jpg")
+    mobile_flag = isMobile()
+    if (mobile_flag) {
+        img = loadImage("static/backgound-rotate.jpg")
+    } else {
+        img = loadImage("static/backgound.jpg")
+    }
     song = loadSound("static/bgm-cut.mp3")
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    let cnv = createCanvas(windowWidth, windowHeight);
+    cnv.parent("container");
     img.resize(width, height);
     // set the color of backround as black
     background(0);
@@ -42,7 +49,11 @@ function draw() {
             fill(red(col), green(col), blue(col), 128);
             push();
             translate(x, y);
-            rotate(radians(rotation))
+            if (mobile_flag === true) {
+                rotate(radians(rotation) + PI / 180 * 90);
+            } else {
+                rotate(radians(rotation));
+            }
 
             rect(0, 0, 2, length);
             pop();
@@ -68,4 +79,9 @@ function mousePressed() {
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
     background(0);
+}
+
+function isMobile() {
+    let flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return flag;
 }
