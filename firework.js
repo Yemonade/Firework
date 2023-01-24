@@ -85,3 +85,8 @@ function isMobile() {
     let flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     return flag;
 }
+
+// function keyTyped() {
+//     if (key === 's')
+//         save('myCanvas.png');
+// }
